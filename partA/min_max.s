@@ -6,7 +6,7 @@ IN: .space 30
 # MIN: .word 0, 0  # stores 10 place min, 0 place min
 MAX: .word 0
 MIN: .word 0
-N: .word 20  # loop count
+N: .word 10  # loop count
 str: .asciiz "pathetic"
 SPCE: .asciiz " "
 
@@ -36,7 +36,7 @@ loop: add $t1, $0, $0
       lb $t2, 1($t0)  # t2 holds 1 place
       addi $t1, $t1, -48  # -48 bc ascii
       addi $t2, $t2, -48
-      add $t7, $t1, $0
+      add $t7, $t1, $0  # t7 holds $t1 value for testing
       addi $s2, $0, 10
       mul $t1, $t1, $s2
       add $t1, $t1, $t2  # t1 now holds final value
