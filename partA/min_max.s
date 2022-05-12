@@ -13,10 +13,7 @@ SPCE: .asciiz " "
 .text
 .globl main
       
-main: li $v0, 4
-      la $a0, str
-      syscall
-      # Read + store value into $t0
+main: # Read + store value into $t0
       li $v0, 8
       la $a0 IN
       li $a1, 32
@@ -30,9 +27,7 @@ main: li $v0, 4
       # li $t2, 0
 
       # store first value into MIN & MAX
-loop: add $t1, $0, $0
-      add $t2, $0, $0
-      lb $t1, 0($t0)  # t1 holds 10 place
+loop: lb $t1, 0($t0)  # t1 holds 10 place
       lb $t2, 1($t0)  # t2 holds 1 place
       addi $t1, $t1, -48  # -48 bc ascii
       addi $t2, $t2, -48
@@ -40,7 +35,7 @@ loop: add $t1, $0, $0
       addi $s2, $0, 10
       mul $t1, $t1, $s2
       add $t1, $t1, $t2  # t1 now holds final value
-      addi $s1, $0, 20
+      addi $s1, $0, 10
       bne $s0, $s1 eval  # skips to eval if loop counter = 20
       sw $t1, MIN
       sw $t1, MAX
