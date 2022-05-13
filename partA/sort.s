@@ -40,18 +40,18 @@ parse:lb $s0, 0($t0)  # t1 holds 10 place
       bne $t2, $0, parse
 
       ### SORTING STARTS HERE
-#       addi $t3, $0, 10
-# start:addi $t2, $0, 10
-#       la $t1, OUT
-# sort: lw $s0, 0($t1)
-#       lw $s1, 4($t1)
-#       slt $s2, $s0, $s1  # s2 = 1 if $s0 < $s1
-#       bne $s2, $zero, skip
-# swap: sw $s1, 0($t1)
-#       sw $s0, 4($t1)
-# skip: addi $t1, $t1, 4
-#       addi $t2, $t2, -1
-#       bne $t2, $0, sort
+      addi $t3, $0, 9
+start:addi $t2, $0, 9
+      la $t1, OUT
+sort: lw $s0, 0($t1)
+      lw $s1, 4($t1)
+      slt $s2, $s0, $s1  # s2 = 1 if $s0 < $s1
+      bne $s2, $zero, skip
+swap: sw $s1, 0($t1)
+      sw $s0, 4($t1)
+skip: addi $t1, $t1, 4
+      addi $t2, $t2, -1
+      bne $t2, $0, sort
       
 
 # store:sw $t1, OUT
