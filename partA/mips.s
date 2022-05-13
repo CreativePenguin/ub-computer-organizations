@@ -11,6 +11,8 @@ la $t0, X # load the address of X into $t0
 and $s1, $s1, $zero # clear $s1 aka temp sum
 
 loop:
+addi $s4, $0, 3
+sw $s4, 0($t0)
 lw $t1, 0($t0) # load the next value of x
 add $s1, $s1, $t1 # add it to the running sum
 addi $t0, $t0, 4 # increment to the next address
