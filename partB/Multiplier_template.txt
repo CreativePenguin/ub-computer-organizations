@@ -1,0 +1,9 @@
+//module multiplier
+//    (
+//     input [7:0] multiplicand_1,
+//     input [7:0] multiplicand_2,
+//     output [15:0] product
+//    );
+
+
+//endmodule
